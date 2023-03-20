@@ -10,7 +10,7 @@ const sequelize = new Sequelize(
   process.env.DB_PASS,
   // options object
   {
-    host: 'localhost', // 127.0.0.1
+    host: 'localhost',
     dialect: 'mysql',
     port: 3306
   }
