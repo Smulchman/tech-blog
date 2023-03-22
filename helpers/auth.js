@@ -1,11 +1,12 @@
-const withAuth = async (req, res, next) => {
+const checkID = async (req, res, next) => {
   // If the user is not logged in, redirects the user to the login page
-  if (!req.session.loggedIn){
-    res.redirect('login');
+  if (!req.id) {
+    res.status(404).json({ message: "Invalid ID!" });
+    return;
   }
   else {
-    next();
+    next
   }
 };
 
-module.exports = withAuth;
+module.exports = checkID;
